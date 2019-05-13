@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false&key=AIzaSyAxJvQZ7hX8F3Ojn886w52rxVgneCiB2gA"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(45.478790, 9.230597);
+		var myOptions = {
+			zoom: 16,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var latlng = new google.maps.LatLng(45.479010, 9.230791);
+		var img = new google.maps.MarkerImage('/Users/sephiros/.pyenv/versions/3.5.2/lib/python3.5/site-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "['temperature: 10, humidity: 10, PM1.0: 10, PM2.5: 10, PM10: 10']",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
